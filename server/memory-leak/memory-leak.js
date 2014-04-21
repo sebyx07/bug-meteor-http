@@ -35,14 +35,14 @@ var getMatches =  function(nrMatches, callback) {
 };
 
 //shift a number of ids from queue
-getNumberOfMatches = function(nr){
+var getNumberOfMatches = function(nr){
     var inQueue = queue.length;
     console.log("in queue are now: " + inQueue);
     if (nr > inQueue) {
         return queue.splice(0, nr);
     }
     else {
-        return queue.splice(0, nr);
+        return queue.splice(0, inQueue);
     }
 };
 
