@@ -38,7 +38,7 @@ var getMatches =  function(nrMatches, callback) {
 var getNumberOfMatches = function(nr){
     var inQueue = queue.length;
     console.log("in queue are now: " + inQueue);
-    if (nr > inQueue) {
+    if (nr < inQueue) {
         return queue.splice(0, nr);
     }
     else {
@@ -71,6 +71,8 @@ Meteor.setInterval(function(){
 }, 2000);
 
 
+//Removed the second setInterval
+/*
 var cylce = 1;
 
 Meteor.setInterval(function(){
@@ -78,3 +80,9 @@ Meteor.setInterval(function(){
     insertSampleData(49);
     cylce++;
 }, 10000);
+*/
+
+//Push at startup 3000 into queue
+Meteor.startup(function(){
+    insertSampleData(3000);
+});
